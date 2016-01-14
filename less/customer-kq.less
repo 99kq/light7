@@ -6,7 +6,7 @@ Customer KQ
 .customer-kq {
 	@pageBg: #f2f2f2;
     @barsBg: #f8f8f8;
-    @barsBorder: #ddd;
+    @barsBorder: #dedede;
     @barsText: #181818;
     @tabBarText: #777;
     @text: #181818;
@@ -25,6 +25,7 @@ Customer KQ
     @checkboxBorder: #e5e5e5;
     @imporentActive: #f54d4f;
     @listBlockBorderColor: #dedede;
+    @finishactive: #ffbabc;
 
 
 	background-color: @pageBg;
@@ -233,25 +234,69 @@ Customer KQ
             }
         }
     }
-
+    .list-block {
+        margin-top: 0;
+    }
     // progress
     .progress {
+        background-color: @pageBg;
+        text-align: center;
+        position: relative;
+        margin: .3rem -0.2rem 0;
         .progress-bar {
             width:33%;
             height:.26rem;
             position:relative;
-            background:#d8d8d8;
-            border:1px solid #ffffff;
+            background:@barsBorder;
+            border:1px solid @barsBorder;
             margin:0;
             display:inline-block;
             float:right;
             &:after, &:before {
                 left:100%;
                 top:50%;
-                border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none;
+                border:solid transparent;
+                content:" ";
+                height:0;
+                width:0;
+                position:absolute;
+                pointer-events:none;
+            }
+            &:after {
+                border-left-color:@barsBorder;
+                border-width:0.14rem;
+                margin-top:-0.14rem;
+            }
+            &:before {
+                border-left-color:@pageBg;
+                border-width:0.24rem;
+                margin-top:-0.24rem;
+            }
+            &:first-child:after ,&:first-child:before {
+                display:none;
             }
         }
-
+        .progress-bar-finish{
+            border-color: @finishactive;
+            background:@finishactive;
+            &:after {
+                border-left-color: @finishactive;
+            }
+        }
+        
+        .progress-bar-active{
+            border-color: @imporentActive;
+            background:@imporentActive;
+            &:after {
+                border-left-color: @imporentActive;
+            }
+        }
+        .progress-info {
+            text-align: center;
+            color: @lightInfo;
+            font-size: 0.6rem;
+            line-height: 4;
+        }
     }
 
 }
