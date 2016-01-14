@@ -234,15 +234,30 @@ Customer KQ
             }
         }
     }
-    .list-block {
-        margin-top: 0;
+    .kq-form {
+        .list-block {
+            margin-top: 0;
+             .item-content:after {
+                left: 0;
+                width: 100%;
+            }
+            input, select {
+                text-align: right;
+            }
+            .list-group-title {
+                font-size: .6rem;
+                line-height: 2;
+            }
+        }
+
     }
+    
     // progress
     .progress {
         background-color: @pageBg;
         text-align: center;
         position: relative;
-        margin: .3rem -0.2rem 0;
+        margin-left: -.2rem;
         .progress-bar {
             width:33%;
             height:.26rem;
