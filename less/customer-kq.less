@@ -4,16 +4,17 @@ Customer KQ
 @import url('mixins.less');
 /* === Dark layout === */
 .customer-kq {
-	@pageBg: #fff;
-    @barsBg: #fff;
+	@pageBg: #f2f2f2;
+    @barsBg: #f8f8f8;
     @barsBorder: #ddd;
-    @barsText: #000;
+    @barsText: #181818;
     @tabBarText: #777;
-    @text: #000;
-    @lightText: #777;
+    @text: #181818;
+    @lightText: #666;
+    @lightInfo: #959595;
     @strongText: #777;
     @activeLink: #eee;
-    @blockBg: @pageBg;
+    @blockBg: #fff;
     @blockBorder: #ddd;
     @blockStrongBg: #fafafa;
     @dividerBg: #f7f7f7;
@@ -22,6 +23,14 @@ Customer KQ
     @searchbarBorder: #b4b4b4;
     @swipeoutButton: #c7c7cc;
     @checkboxBorder: #e5e5e5;
+    @imporentActive: #f54d4f;
+    @listBlockBorderColor: #dedede;
+
+
+	background-color: @pageBg;
+	color: @text;
+    line-height: 1;
+
     .navbar, .navbar&, .subnavbar, .subnavbar& {
         .hairline-color(bottom, @barsBorder);
         background-color: @barsBg;
@@ -142,4 +151,107 @@ Customer KQ
     .range-slider input[type="range"]:after {
         background: @blockBg;
     }
+
+    // Button
+    .button {
+        border-radius: 0.15rem;
+    }
+    .buttons-tab .button {
+        color: @lightText;
+        font-size: .7rem;
+    }
+    .buttons-tab .button.active {
+        color: @imporentActive;
+        border-color: @imporentActive;
+    }
+    // List
+    .kq-base-title {
+        margin: .3rem .6rem;
+        text-align: right;
+        font-size: .6rem;
+    }
+    .media-list {
+        margin: 0;
+    }
+    .list-block .item-inner:after {
+        display: none;
+    }
+    .list-block .item-content {
+        .hairline(bottom, @listBlockBorderColor);
+    }
+    .list-block .item-content:after {
+        left: 5%;
+        width: 95%;
+    }
+
+    // kq-payment-list
+    .kq-payment-list {
+        .item-subtitle {
+            color: @lightText;
+            font-size: .6rem;
+        }
+        .bill-status {
+            color: @lightText;
+            font-size: .6rem;
+        }
+    }
+    .text-danger {
+        color: @imporentActive;
+    }
+
+    // success-page
+    .success-page {
+        .success-header {
+            margin-top: 2rem;
+            text-align: center;
+            margin-bottom: .5rem;
+        }
+        .success-title , .success-info {
+            text-align: center;
+        }
+        .success-title {
+            font-size: 0.85rem;
+            color: @text;
+        }
+        .success-info {
+            color:  @lightInfo;
+            font-size: .7rem;
+            line-height: 2rem;
+        }
+        .list-block {
+            margin: 1.7rem 0 1rem;
+            .item-title {
+                color:  @lightInfo;
+                font-size: .7rem;
+            }
+            .item-after {
+                color: @text;
+                font-size: .7rem;
+            }
+            .item-content:after {
+                display: none;
+            }
+        }
+    }
+
+    // progress
+    .progress {
+        .progress-bar {
+            width:33%;
+            height:.26rem;
+            position:relative;
+            background:#d8d8d8;
+            border:1px solid #ffffff;
+            margin:0;
+            display:inline-block;
+            float:right;
+            &:after, &:before {
+                left:100%;
+                top:50%;
+                border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none;
+            }
+        }
+
+    }
+
 }
