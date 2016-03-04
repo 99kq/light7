@@ -160,6 +160,7 @@ Customer KQ
     .buttons-tab .button {
         color: @lightText;
         font-size: .7rem;
+        border-radius: 0;
     }
     .buttons-tab .button.active {
         color: @imporentActive;
@@ -243,6 +244,8 @@ Customer KQ
             }
             input, select {
                 text-align: right;
+            }
+            select {
                 direction: rtl;
             }
             .list-group-title {
@@ -259,6 +262,7 @@ Customer KQ
         text-align: center;
         position: relative;
         margin-left: -.2rem;
+        min-height: 0.8rem;
         .progress-bar {
             width:33%;
             height:.26rem;
